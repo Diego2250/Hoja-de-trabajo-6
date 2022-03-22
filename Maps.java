@@ -89,15 +89,14 @@ public class Maps {
        } 
     }
 
-    public String Nombre_de_producto(String n, int hash){
-        String message=""; 
+    public void Nombre_de_producto(String n, int hash){
         switch (hash) {
             case 1:
                 for(Map.Entry<String, ArrayList> m: Productos.entrySet()){
                     ArrayList<String> Nombres=m.getValue();
                     for(String productos: Nombres){
                         if (productos.equals(nombre)){
-                            message="Categoria "+m.getKey()+" : producto"+productos; 
+                            System.out.println("Categoria "+m.getKey()+" : producto"+productos); 
                         }
                     }
                 }
@@ -107,7 +106,7 @@ public class Maps {
                     ArrayList<String> Nombres=m.getValue();
                     for(String productos: Nombres){
                         if (productos.equals(nombre)){
-                            message="Categoria "+m.getKey()+" : producto"+productos; 
+                            System.out.println("Categoria "+m.getKey()+" : producto"+productos); 
                         }
                     }
                 }
@@ -117,7 +116,7 @@ public class Maps {
                     ArrayList<String> Nombres=m.getValue();
                     for(String productos: Nombres){
                         if (productos.equals(nombre)){
-                            message="Categoria "+m.getKey()+" : producto"+productos; 
+                            System.out.println("Categoria "+m.getKey()+" : producto"+productos); 
                         }
                     }
                 }
@@ -128,4 +127,157 @@ public class Maps {
         }
     }
 
+    public void Datos_producto(int n){
+        String message="";
+        switch (n) {
+            case 1:
+                for(Map.Entry<String, ArrayList> m: Productos.entrySet()){
+                    ArrayList<String> Nombres=m.getValue();    
+                    message=message+"\n"+"Categoria "+m.getKey()+" Cantidad "+Nombres.size();
+                    System.out.println(message);
+                }    
+                break;
+            case 2:
+                for(Map.Entry<String, ArrayList> m: ProductosT.entrySet()){
+                    ArrayList<String> Nombres=m.getValue();    
+                    message=message+"\n"+"Categoria "+m.getKey()+" Cantidad "+Nombres.size();
+                    System.out.println(message);
+                } 
+                break;      
+            case 3:
+                for(Map.Entry<String, ArrayList> m: ProductosL.entrySet()){
+                    ArrayList<String> Nombres=m.getValue();    
+                    message=message+"\n"+"Categoria "+m.getKey()+" Cantidad "+Nombres.size();
+                    System.out.println(message);
+                }      
+            default:
+                break;
+        }
+    }
+
+    public void Datos_producto_nombres(int n){
+        String message="";
+        switch (n) {
+            case 1:
+                for(Map.Entry<String, ArrayList> m: Productos.entrySet()){
+                    ArrayList<String> Nombres=m.getValue();    
+                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
+                    System.out.println(message);
+                }    
+                break;
+            case 2:
+                for(Map.Entry<String, ArrayList> m: ProductosT.entrySet()){
+                    ArrayList<String> Nombres=m.getValue();    
+                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
+                    System.out.println(message);
+                } 
+                break;      
+            case 3:
+                for(Map.Entry<String, ArrayList> m: ProductosL.entrySet()){
+                    ArrayList<String> Nombres=m.getValue();    
+                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
+                    System.out.println(message);
+                }      
+            default:
+                break;
+        }
+    }
+
+    public void Everything(int n){
+        String message="";
+        switch (n) {
+            case 1:
+                for(Map.Entry<String, ArrayList> m: Productos.entrySet()){
+                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
+                    System.out.println(message);
+                }    
+                break;
+            case 2:
+                for(Map.Entry<String, ArrayList> m: ProductosT.entrySet()){
+                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
+                    System.out.println(message);
+                } 
+                break;      
+            case 3:
+                for(Map.Entry<String, ArrayList> m: ProductosL.entrySet()){
+                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
+                    System.out.println(message);
+                }      
+            default:
+                break;
+        }
+    }
+
+    public void AddValor(String v1, String v2, int n){
+        String message="Se ha agregado de manera exitosa";
+        ArrayList<String> values=new ArrayList<>(); 
+        switch (n) {
+            case 1:
+                if (Productos.get(v1)!=null) {
+                    values=Productos.get(v1);
+                    values.add(v2);
+                    System.out.println(message);
+                } else {
+                    message="Categoria no encontrada";
+                    System.out.println(message);
+                }
+                break;
+            case 2:
+                if (ProductosT.get(v1)!=null) {
+                    values=Productos.get(v1);
+                    values.add(v2);
+                    System.out.println(message);
+                } else {
+                    message="Categoria no encontrada";
+                    System.out.println(message);
+                }
+                break;
+            case 3:
+                if (ProductosL.get(v1)!=null) {
+                    values=Productos.get(v1);
+                    values.add(v2);
+                    System.out.println(message);
+                } else {
+                    message="Categoria no encontrada";
+                    System.out.println(message);
+                }
+                break;    
+            default:
+                break;
+        }
+    }
+
+    public HashMap<String, ArrayList> getProductos() {
+        return Productos;
+    }
+
+    public void setProductos(HashMap<String, ArrayList> Productos) {
+        this.Productos = Productos;
+    }
+
+    public LinkedHashMap <String, ArrayList> getProductosL() {
+        return ProductosL;
+    }
+
+    public void setProductosL(LinkedHashMap <String, ArrayList> ProductosL) {
+        this.ProductosL = ProductosL;
+    }
+
+    public TreeMap <String, ArrayList> getProductosT() {
+        return ProductosT;
+    }
+
+    public void setProductosT(TreeMap <String, ArrayList> ProductosT) {
+        this.ProductosT = ProductosT;
+    }
+
+    public ArrayList <String> getDatos() {
+        return Datos;
+    }
+
+    public void setDatos(ArrayList <String> Datos) {
+        this.Datos = Datos;
+    }
+
+    
 }
