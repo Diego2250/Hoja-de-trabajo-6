@@ -64,19 +64,20 @@ public class Maps {
             String V=Datos.get(i+1);
             if (ProductosL.size()==0) {
                 Nombres.add(V);
-                ProductosT.put(K, Nombres);
-            } else if(ProductosT.get(K)!= null){
-                Nombres=ProductosT.get(K);
+                ProductosL.put(K, Nombres);
+            } else if(ProductosL.get(K)!= null){
+                Nombres=ProductosL.get(K);
                 Nombres.add(V);
-                ProductosT.put(K, Nombres);                
+                ProductosL.put(K, Nombres);                
             }else{
                 Nombres.add(V);
-                ProductosT.put(K, Nombres);
+                ProductosL.put(K, Nombres);
             }
             i+=1;
         }
-        for(Map.Entry<String, ArrayList> m: ProductosL.entrySet()){
-            System.out.println(m.getKey() + " : " + m.getValue());  
+        for(Map.Entry<String,ArrayList> m : ProductosL.entrySet())
+        {
+            System.out.println(m.getKey() + " : " + m.getValue());
         }
     }
 
@@ -96,7 +97,7 @@ public class Maps {
                     ArrayList<String> Nombres=m.getValue();
                     for(String productos: Nombres){
                         if (productos.equals(n)){
-                            System.out.println("Categoria "+m.getKey()+" : producto"+productos); 
+                            System.out.println("Categoria "+m.getKey()+", producto: "+productos); 
                         }
                     }
                 }
@@ -106,7 +107,7 @@ public class Maps {
                     ArrayList<String> Nombres=m.getValue();
                     for(String productos: Nombres){
                         if (productos.equals(n)){
-                            System.out.println("Categoria "+m.getKey()+" : producto"+productos); 
+                            System.out.println("Categoria: "+m.getKey()+", Producto: "+productos); 
                         }
                     }
                 }
@@ -116,7 +117,7 @@ public class Maps {
                     ArrayList<String> Nombres=m.getValue();
                     for(String productos: Nombres){
                         if (productos.equals(n)){
-                            System.out.println("Categoria "+m.getKey()+" : producto"+productos); 
+                            System.out.println("Categoria: "+m.getKey()+", Producto: "+productos); 
                         }
                     }
                 }
@@ -134,22 +135,22 @@ public class Maps {
                 for(Map.Entry<String, ArrayList> m: Productos.entrySet()){
                     ArrayList<String> Nombres=m.getValue();    
                     message=message+"\n"+"Categoria "+m.getKey()+" Cantidad "+Nombres.size();
-                    System.out.println(message);
                 }    
+                System.out.println(message);
                 break;
             case 2:
                 for(Map.Entry<String, ArrayList> m: ProductosT.entrySet()){
                     ArrayList<String> Nombres=m.getValue();    
                     message=message+"\n"+"Categoria "+m.getKey()+" Cantidad "+Nombres.size();
-                    System.out.println(message);
                 } 
+                System.out.println(message);
                 break;      
             case 3:
                 for(Map.Entry<String, ArrayList> m: ProductosL.entrySet()){
                     ArrayList<String> Nombres=m.getValue();    
                     message=message+"\n"+"Categoria "+m.getKey()+" Cantidad "+Nombres.size();
-                    System.out.println(message);
-                }      
+                } 
+                System.out.println(message);     
             default:
                 break;
         }
@@ -161,23 +162,23 @@ public class Maps {
             case 1:
                 for(Map.Entry<String, ArrayList> m: Productos.entrySet()){
                     ArrayList<String> Nombres=m.getValue();    
-                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
-                    System.out.println(message);
-                }    
+                    message=message+"\n"+"Categoria "+m.getKey()+ " : Producto "+m.getValue()+" : Cantidad "+Nombres.size();
+                }  
+                System.out.println(message);   
                 break;
             case 2:
                 for(Map.Entry<String, ArrayList> m: ProductosT.entrySet()){
-                    ArrayList<String> Nombres=m.getValue();    
-                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
-                    System.out.println(message);
+                    ArrayList<String> Nombres=m.getValue();   
+                    message=message+"\n"+"Categoria "+m.getKey()+ " : Producto "+m.getValue()+"  : Cantidad "+Nombres.size();
                 } 
+                System.out.println(message); 
                 break;      
             case 3:
                 for(Map.Entry<String, ArrayList> m: ProductosL.entrySet()){
                     ArrayList<String> Nombres=m.getValue();    
-                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
-                    System.out.println(message);
-                }      
+                    message=message+"\n"+"Categoria "+m.getKey()+ " : Producto "+m.getValue()+" : Cantidad "+Nombres.size();
+                }    
+                System.out.println(message);   
             default:
                 break;
         }
@@ -189,20 +190,20 @@ public class Maps {
             case 1:
                 for(Map.Entry<String, ArrayList> m: Productos.entrySet()){
                     message=message+ "\n" + m.getKey() + " : " + m.getValue();
-                    System.out.println(message);
                 }    
+                System.out.println(message); 
                 break;
             case 2:
                 for(Map.Entry<String, ArrayList> m: ProductosT.entrySet()){
                     message=message+ "\n" + m.getKey() + " : " + m.getValue();
-                    System.out.println(message);
                 } 
+                System.out.println(message); 
                 break;      
             case 3:
                 for(Map.Entry<String, ArrayList> m: ProductosL.entrySet()){
                     message=message+ "\n" + m.getKey() + " : " + m.getValue();
-                    System.out.println(message);
-                }      
+                }  
+                System.out.println(message);     
             default:
                 break;
         }
@@ -224,7 +225,7 @@ public class Maps {
                 break;
             case 2:
                 if (ProductosT.get(v1)!=null) {
-                    values=Productos.get(v1);
+                    values=ProductosT.get(v1);
                     values.add(v2);
                     System.out.println(message);
                 } else {
@@ -234,7 +235,7 @@ public class Maps {
                 break;
             case 3:
                 if (ProductosL.get(v1)!=null) {
-                    values=Productos.get(v1);
+                    values=ProductosL.get(v1);
                     values.add(v2);
                     System.out.println(message);
                 } else {
