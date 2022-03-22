@@ -1,25 +1,28 @@
 import java.io.File;
-import java.io.FileWriter;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.IOException;
+import java.util.ArrayList;
 public class archivos {
     public archivos(){
 
     }
 
-    public void leer(){
+    public ArrayList leer(){
+        ArrayList<String> data= new ArrayList<>();
         try {
           File myObj = new File("ListadoProducto.txt");
           Scanner myReader = new Scanner(myObj);
           while (myReader.hasNextLine()) {
-            String data = myReader.nextLine();
-            System.out.println(data);
+            String linea = myReader.nextLine();
+            data.add(linea);
+
           }
           myReader.close();
         } catch (FileNotFoundException e) {
           e.printStackTrace();
         }
+        return data; 
       }
 
 }
