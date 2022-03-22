@@ -1,4 +1,4 @@
 public interface Imap<T> {
-    
-   public Generics<T> seleccion(integer n);
+
+   public generics<T> seleccion(integer n);
 }
