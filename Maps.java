@@ -5,7 +5,7 @@ import java.util.Map;
 import java.security.PublicKey;
 import java.util.ArrayList;
 public class Maps {
-    private HashMap<String, ArrayList> Productos=new HashMap<s, ArrayList>();
+    private HashMap<String, ArrayList> Productos=new HashMap<String, ArrayList>();
     private ArrayList<String> Datos=new ArrayList<>();
     private LinkedHashMap<String, ArrayList> ProductosL = new LinkedHashMap<String, ArrayList>();
     private TreeMap <String, ArrayList> ProductosT = new TreeMap<String, ArrayList>();
@@ -82,7 +82,7 @@ public class Maps {
 
     public void datos(ArrayList data){
        for (int i = 0; i < data.size(); i++) {
-           String value = data.get(i);
+           String value =(String) data.get(i);
            String[] lista= value.split("-");
            Datos.add(lista[0]);
            Datos.add(lista[1]);
@@ -95,7 +95,7 @@ public class Maps {
                 for(Map.Entry<String, ArrayList> m: Productos.entrySet()){
                     ArrayList<String> Nombres=m.getValue();
                     for(String productos: Nombres){
-                        if (productos.equals(nombre)){
+                        if (productos.equals(n)){
                             System.out.println("Categoria "+m.getKey()+" : producto"+productos); 
                         }
                     }
@@ -105,7 +105,7 @@ public class Maps {
                 for(Map.Entry<String, ArrayList> m: ProductosT.entrySet()){
                     ArrayList<String> Nombres=m.getValue();
                     for(String productos: Nombres){
-                        if (productos.equals(nombre)){
+                        if (productos.equals(n)){
                             System.out.println("Categoria "+m.getKey()+" : producto"+productos); 
                         }
                     }
@@ -115,7 +115,7 @@ public class Maps {
                 for(Map.Entry<String, ArrayList> m: ProductosL.entrySet()){
                     ArrayList<String> Nombres=m.getValue();
                     for(String productos: Nombres){
-                        if (productos.equals(nombre)){
+                        if (productos.equals(n)){
                             System.out.println("Categoria "+m.getKey()+" : producto"+productos); 
                         }
                     }
@@ -188,19 +188,19 @@ public class Maps {
         switch (n) {
             case 1:
                 for(Map.Entry<String, ArrayList> m: Productos.entrySet()){
-                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
+                    message=message+ "\n" + m.getKey() + " : " + m.getValue();
                     System.out.println(message);
                 }    
                 break;
             case 2:
                 for(Map.Entry<String, ArrayList> m: ProductosT.entrySet()){
-                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
+                    message=message+ "\n" + m.getKey() + " : " + m.getValue();
                     System.out.println(message);
                 } 
                 break;      
             case 3:
                 for(Map.Entry<String, ArrayList> m: ProductosL.entrySet()){
-                    message=message+"\n"+"Categoria "+m.getKey()+ " :Producto "+m.getValue()+" Cantidad "+Nombres.size();
+                    message=message+ "\n" + m.getKey() + " : " + m.getValue();
                     System.out.println(message);
                 }      
             default:

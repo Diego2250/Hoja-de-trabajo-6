@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.TreeMap;
 
 public class generics<T> {
-    t obj; 
+    T obj; 
 
     generics(T o){
         obj=o;
