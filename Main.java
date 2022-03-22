@@ -16,8 +16,7 @@ public class Main {
         String menu = "\nIngrese la opción que desea utilizar: \n" +
                 "1. HashMap\n" +
                 "2. TreeMap\n" +
-                "3. LinkedHashMap\n" +
-                "4. Salir\n";
+                "3. LinkedHashMap\n";
         String menu2 = "\nIngrese la opción que desea utilizar: \n" +
                 "1. Ingresar producto\n" +
                 "2. Buscar producto\n" +

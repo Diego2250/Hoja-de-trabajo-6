@@ -8,6 +8,10 @@ public class archivos {
 
     }
 
+    
+    /** 
+     * @return ArrayList
+     */
     public ArrayList leer(){
         ArrayList<String> data= new ArrayList<>();
         try {

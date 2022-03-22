@@ -81,6 +81,10 @@ public class Maps {
         }
     }
 
+    
+    /** 
+     * @param data
+     */
     public void datos(ArrayList data){
        for (int i = 0; i < data.size(); i++) {
            String value =(String) data.get(i);
@@ -90,6 +94,11 @@ public class Maps {
        } 
     }
 
+    
+    /** 
+     * @param n
+     * @param hash
+     */
     public void Nombre_de_producto(String n, int hash){
         switch (hash) {
             case 1:
@@ -128,6 +137,10 @@ public class Maps {
         }
     }
 
+    
+    /** 
+     * @param n
+     */
     public void Datos_producto(int n){
         String message="";
         switch (n) {
@@ -156,6 +169,10 @@ public class Maps {
         }
     }
 
+    
+    /** 
+     * @param n
+     */
     public void Datos_producto_nombres(int n){
         String message="";
         switch (n) {
@@ -184,6 +201,10 @@ public class Maps {
         }
     }
 
+    
+    /** 
+     * @param n
+     */
     public void Everything(int n){
         String message="";
         switch (n) {
@@ -209,6 +230,12 @@ public class Maps {
         }
     }
 
+    
+    /** 
+     * @param v1
+     * @param v2
+     * @param n
+     */
     public void AddValor(String v1, String v2, int n){
         String message="Se ha agregado de manera exitosa";
         ArrayList<String> values=new ArrayList<>(); 
@@ -248,34 +275,66 @@ public class Maps {
         }
     }
 
+    
+    /** 
+     * @return HashMap<String, ArrayList>
+     */
     public HashMap<String, ArrayList> getProductos() {
         return Productos;
     }
 
+    
+    /** 
+     * @param Productos
+     */
     public void setProductos(HashMap<String, ArrayList> Productos) {
         this.Productos = Productos;
     }
 
+    
+    /** 
+     * @return LinkedHashMap<String, ArrayList>
+     */
     public LinkedHashMap <String, ArrayList> getProductosL() {
         return ProductosL;
     }
 
+    
+    /** 
+     * @param ProductosL
+     */
     public void setProductosL(LinkedHashMap <String, ArrayList> ProductosL) {
         this.ProductosL = ProductosL;
     }
 
+    
+    /** 
+     * @return TreeMap<String, ArrayList>
+     */
     public TreeMap <String, ArrayList> getProductosT() {
         return ProductosT;
     }
 
+    
+    /** 
+     * @param ProductosT
+     */
     public void setProductosT(TreeMap <String, ArrayList> ProductosT) {
         this.ProductosT = ProductosT;
     }
 
+    
+    /** 
+     * @return ArrayList<String>
+     */
     public ArrayList <String> getDatos() {
         return Datos;
     }
 
+    
+    /** 
+     * @param Datos
+     */
     public void setDatos(ArrayList <String> Datos) {
         this.Datos = Datos;
     }

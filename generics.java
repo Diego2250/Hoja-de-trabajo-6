@@ -9,6 +9,10 @@ public class generics<T> {
         obj=o;
     }
 
+    
+    /** 
+     * @return T
+     */
     T getOb(){
         return obj; 
     }
